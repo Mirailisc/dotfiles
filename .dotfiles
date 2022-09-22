@@ -1,0 +1,69 @@
+alias -- gb='git branch'
+alias -- la='ls -lAh'
+alias -- gams='git am --skip'
+alias -- history='omz_history'
+alias -- gstall='git stash --all'
+alias -- grs='git restore'
+alias -- grm='git rm'
+alias -- grbd='git rebase $(git_develop_branch)'
+alias -- grbi='git rebase -i'
+alias -- grb='git rebase'
+alias -- gpoat='git push origin --all && git push origin --tags'
+alias -- glola='git log --graph --pretty='"'"'\'"'"''"'"'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"'"'\'"'"''"'"' --all'
+alias -- glol='git log --graph --pretty='"'"'\'"'"''"'"'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'"'"'\'
+alias -- c='code .'
+alias -- p='pnpm'
+alias -- pi='pnpm install'
+alias -- pstart='pnpm run start'
+alias -- ydev='pnpm run dev'
+alias -- y='yarn'
+alias -- yi='yarn install'
+alias -- ystart='yarn run start'
+alias -- ydev='yarn run dev'
+
+### ohmyzsh
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/ohmyzsh' ]; then
+export ZSH="/Users/mirailisc/.local/share/fig/plugins/ohmyzsh"
+  source '/Users/mirailisc/.local/share/fig/plugins/ohmyzsh/oh-my-zsh.sh'
+fi
+
+### powerlevel10k
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/powerlevel10k' ]; then
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+
+source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+source '/Users/mirailisc/.local/share/fig/plugins/powerlevel10k/powerlevel10k.zsh-theme'
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+fi
+
+### zsh-autosuggestions
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/zsh-autosuggestions' ]; then
+
+source '/Users/mirailisc/.local/share/fig/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh'
+fi
+
+### zsh-syntax-highlighting
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/zsh-syntax-highlighting' ]; then
+
+source '/Users/mirailisc/.local/share/fig/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh'
+fi
+
+### git-flow
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/git-flow' ]; then
+
+PATH=$PATH:'/Users/mirailisc/.local/share/fig/plugins/git-flow'
+fi
+
+### nvm-auto-use.zsh_tomsquest
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/nvm-auto-use.zsh_tomsquest' ]; then
+
+source '/Users/mirailisc/.local/share/fig/plugins/nvm-auto-use.zsh_tomsquest/nvm-auto-use.zsh'
+fi
+
+### zsh-nvm
+if [ -d '/Users/mirailisc/.local/share/fig/plugins/zsh-nvm' ]; then
+
+source '/Users/mirailisc/.local/share/fig/plugins/zsh-nvm/zsh-nvm.plugin.zsh'
+fi
