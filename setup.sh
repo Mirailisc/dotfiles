@@ -1,11 +1,6 @@
 #!/bin/sh
 echo "Hello, ${USER}"
 echo "Starting setup dotfiles!"
-if ! [ -x "$(command -v brew)" ]; then
-    echo "homebrew is not exist!"
-    echo "\nInstalling Homebrew"
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && 	   ./setup.sh
-fi
 
 brew_install() {
     echo "\nInstalling $1"
@@ -29,6 +24,22 @@ file_exist() {
 	    return 0
     fi
 }
+
+if file_exist $ZSHRC; then
+  echo "Copying $ZSHRC"
+  cp ./.zshrc $ZSHRC
+fi
+
+if file_exist $ZPROFILE; then
+  echo "Copying $ZPROFILE"
+  cp ./.zprofile $ZPROFILE
+fi
+
+if ! [ -x "$(command -v brew)" ]; then
+    echo "homebrew is not exist!"
+    echo "\nInstalling Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" && ./setup.sh
+fi
 
 brew_install "git"
 brew_install "iterm2"
@@ -65,16 +76,6 @@ fi
 if file_exist ~/.config/nvim/init.vim; then
   echo "Copying $NVIM Config"
   cp ./.config/nvim/init.vim ~/.config/nvim/
-fi
-
-if file_exist $ZSHRC; then
-  echo "Copying $ZSHRC"
-  cp ./.zshrc $ZSHRC
-fi
-
-if file_exist $ZPROFILE; then
-  echo "Copying $ZPROFILE"
-  cp ./.zprofile $ZPROFILE
 fi
 
 brew_install "fig"
