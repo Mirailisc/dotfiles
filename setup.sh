@@ -20,7 +20,7 @@ brew_install() {
 }
 
 file_exist() {
-    echo "\n checking $1"
+    echo "\nChecking $1"
     if [ -f "$1" ]; then
 	echo "$1 is exist"
 	return 1
@@ -32,25 +32,40 @@ file_exist() {
 
 brew_install "git"
 brew_install "iterm2"
+brew_install "nvm"
+brew_install "neofetch"
+brew_install "rectangle"
+
 if brew_install "neovim"; then
     echo "\nInstalling Vim-Plug"
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim';
     else
-        echo "Vim-Plug is already installed"
+        echo "\nVim-Plug is already installed"
 fi
 
-brew_install "nvm"
 
-NVIM=~/.config/nvim
+NEOFETCH=~/.config/neofetch/
+NVIM=~/.config/nvim/
+ZSHRC=~/.zshrc
+ZPROFILE=~/.zprofile
+
+if ! [ -d $NEOFETCH ]; then
+  mkdir $NEOFETCH
+fi
+
+if file_exist ~/.config/neofetch/config.conf; then
+  echo "Copying $ZSHRC Config"
+  cp ./.config/neofetch/config.conf $NEOFETCH
+fi
 
 if ! [ -d $NVIM ]; then
   mkdir $NVIM
 fi
 
-file_exist ~/.config/nvim/init.vim
-
-ZSHRC=~/.zshrc
-ZPROFILE=~/.zprofile
+if file_exist ~/.config/nvim/init.vim; then
+  echo "Copying $NVIM Config"
+  cp ./.config/nvim/init.vim ~/.config/nvim/
+fi
 
 if file_exist $ZSHRC; then
   echo "Copying $ZSHRC"
@@ -68,5 +83,3 @@ fig source
 fig doctor
 
 echo "Setup finished, Happy Hacking!"
-
-
