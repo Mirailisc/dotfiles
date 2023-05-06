@@ -10,11 +10,7 @@ If you want to contribute (fix) this repository feel free to **fork** it and ope
 1. Clone this repository or download it
 2. run this command
 ```sh
-$ chmod +x ./setup.sh
-```
-3. run this command
-```sh
-$ ./setup.sh
+$ chmod +x ./setup.sh && ./setup.sh
 ```
 
 If it's doesn't work, you can just copy the file and paste it in your user directory `/Users/${USER}`
