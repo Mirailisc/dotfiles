@@ -9,8 +9,8 @@ If you want to contribute (fix) this repository feel free to **fork** it and ope
 ## How to
 1. Clone this repository or download it
 2. run this command
-```sh
-$ chmod +x ./setup.sh && ./setup.sh
+```bash
+chmod +x ./setup.sh && ./setup.sh
 ```
 
 If it's doesn't work, you can just copy the file and paste it in your user directory `/Users/${USER}`
