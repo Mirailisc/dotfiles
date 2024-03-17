@@ -78,9 +78,4 @@ if file_exist ~/.config/nvim/init.vim; then
   cp ./.config/nvim/init.vim ~/.config/nvim/
 fi
 
-brew_install "fig"
-
-fig source
-fig doctor
-
-echo "Setup finished, Happy Hacking!"
+echo "Setup finished, Happy Coding!"
