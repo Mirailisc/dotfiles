@@ -1,5 +1,7 @@
 # My Personal Dotfiles
 
+> Since fig.io is deprecated, I moved to Warp instead, which is more efficient and has built-in AI.
+
 ## About
 This repository contain some important dotfiles for my **M1 Macbook Air**
 
