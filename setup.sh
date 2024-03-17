@@ -42,7 +42,7 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 brew_install "git"
-brew_install "iterm2"
+brew_install "warp"
 brew_install "nvm"
 brew_install "neofetch"
 brew_install "rectangle"
