@@ -6,4 +6,4 @@ This repository contains my personal dev environment files. 💻
 
 ## Screenshot
 
-[screenshot](./screenshot.png)
+![screenshot](./screenshot.png)
