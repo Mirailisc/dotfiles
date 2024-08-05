@@ -5,5 +5,5 @@ sketchybar --add item battery right \
                          script="$PLUGIN_DIR/battery.sh" \
                          background.color=$COLOR_BLUE \
                          label.color=$COLOR_BLACK \
-                         icon.color=$COLOR_BLACK
+                         icon.color=$COLOR_BLACK \
            --subscribe battery system_woke power_source_change
